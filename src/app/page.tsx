@@ -1,95 +1,81 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import TshirtDesigner from '../components/TshirtDesigner';
+import TshirtDesignerw from "@/components/hincanva";
+import App from '../pages/App'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main >
+      <TshirtDesigner />
+      <TshirtDesignerw />
     </main>
   );
 }
+//==================================================================
+// const drawOnCanvaButtonForText = (layer: Layer, ctx: CanvasRenderingContext2D) => {
+//   ctx.fillStyle = 'red';
+//   ctx.fillRect(
+//     layer.x - _onCanvaButtonSize / 2,
+//     layer.y - layer.fontSize! - _onCanvaButtonSize / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+//   ctx.fillRect(
+//     layer.x + layer.width! - _onCanvaButtonSize / 2,
+//     layer.y - layer.fontSize! / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+
+//   ctx.fillRect(
+//     layer.x + layer.width! - _onCanvaButtonSize / 2,
+//     layer.y + _onCanvaButtonSize / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+
+//   ctx.fillRect(
+//     layer.x + layer.width! / 2 - _onCanvaButtonSize / 2,
+//     layer.y + _onCanvaButtonSize / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+
+//   ctx.fillRect(
+//     layer.x - _onCanvaButtonSize / 2,
+//     layer.y + _onCanvaButtonSize / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+
+//   ctx.fillRect(
+//     layer.x + layer.width! - _onCanvaButtonSize / 2,
+//     layer.y - layer.fontSize! - _onCanvaButtonSize / 2,
+//     _onCanvaButtonSize,
+//     _onCanvaButtonSize
+//   );
+// }
+
+// ctx.save(); // Save the current state
+//============================================================================================================
+// const drawTextWithSpacing = (ctx: CanvasRenderingContext2D, text: string, x: number, y: number, letterSpacing: number) => {
+//   let currentX = x;
+//   let currentY = y;
+//   for (let i = 0; i < text.length; i++) {
+//     const char = text[i];
+//     ctx.fillText(char, currentX, y, 1);
+//     currentX += ctx.measureText(char).width + letterSpacing;
+//     currentY += ctx.measureText(char).width + letterSpacing;
+//   }
+// };
+// Draw layers
+
+//========================================================================
+// const rect = canvas.getBoundingClientRect();
+// const x = e.clientX - rect.left;
+// const y = e.clientY - rect.top;
+// console.log(mouseX, mouseY, "==", rect.width, rect.height, '==', rect.left, rect.top, rect.right, rect.bottom);
+//======================================================================
+// const angle = selectedLayer.angle * (Math.PI / 180); // Convert degrees to radians
+//==========================================================================
